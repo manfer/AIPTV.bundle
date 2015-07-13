@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist version="1" xmlns="http://xspf.org/ns/0/">
+  <title>Sample List</title>
+  <creator>Fernando San Julián</creator>
+  <annotation>Sample List for Alternative IPTV Plex Plugin</annotation>
+  <date>2015-06-09T08:47:17</date>
+  <image>default.png</image>
+  <trackList>
+    <track>
+      <location>http://rt.com/s/rtplayer/playlists/rt_global.m3u8</location>
+      <title>RT HD</title>
+      <annotation>Russia Today News Channel</annotation>
+      <image>http://rt.com/static/img/static/logo.png</image>
+      <meta rel="category">News</meta>
+    </track>
+    <track>
+      <location>http://live.wmncdn.net/dy365tv/3765b6dd461ee01a7ba46c5585923068.sdp/playlist.m3u8</location>
+      <title>DY 365</title>
+      <annotation>DY 365 - Guwahati, India</annotation>
+      <image>http://i.imgur.com/dZw4bQF.png</image>
+      <meta rel="category">News</meta>
+    </track>
+    <track>
+      <location>http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_world/ls_satlink/b_,828,528,264,.m3u8</location>
+      <title>BBC World News</title>
+      <annotation>British Broadcasting Corporation World News TV</annotation>
+      <image>http://i.imgur.com/L65xXL7.png</image>
+      <meta rel="category">News</meta>
+    </track>
+    <track>
+      <location>http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/aljazeera_ar/ls_satlink/b_,828,528,264,.m3u8</location>
+      <title>Al Jazeera</title>
+      <annotation>Al Jazeera (Arabic) - Doha, Qatar</annotation>
+      <image>http://i.imgur.com/oowufrk.jpg</image>
+      <meta rel="category">News</meta>
+    </track>
+    <track>
+      <location>http://live.chosun.gscdn.com/live/_definst_/mp4:tvchosun1.stream/playlist.m3u8</location>
+      <title>TV Chosun</title>
+      <annotation>TV Chosun - Seoul, South Korea</annotation>
+      <image>http://i.imgur.com/6qeOpzy.png</image>
+      <meta rel="category">News</meta>
+    </track>
+    <track>
+      <location>http://stream.smcloud.net/live2/eskatv/eskatv_360p/playlist.m3u8</location>
+      <title>Eska TV</title>
+      <annotation>Eska TV</annotation>
+      <image>http://sd-xbmc.org/repository/xbmc-addons/eskago.png</image>
+      <meta rel="category">Music</meta>
+    </track>
+    <track>
+      <location>http://stream.smcloud.net/live2/vox/vox_720p/playlist.m3u8</location>
+      <title>Music Box TV</title>
+      <annotation>Eska Go - Music Vox TV</annotation>
+      <image>http://sd-xbmc.org/repository/xbmc-addons/eskago.png</image>
+      <meta rel="category">Music</meta>
+    </track>
+    <track>
+      <location>http://europaplus.cdnvideo.ru/europaplus-live/mp4:eptv_main.sdp/playlist.m3u8</location>
+      <title>Europa Plus TV</title>
+      <annotation>Eska Go - Music Vox TV</annotation>
+      <image>http://i.imgur.com/PVpRkAR.jpg</image>
+      <meta rel="category">Music</meta>
+    </track>
+    <track>
+      <location>http://vevoplaylist-live.hls.adaptive.level3.net/vevo/ch1/06/prog_index.m3u8</location>
+      <title>Vevo Ch1</title>
+      <annotation>Vevo Music Channel 1</annotation>
+      <image>http://i.imgur.com/wRYkR3q.png</image>
+      <meta rel="category">Music</meta>
+    </track>
+    <track>
+      <location>http://vevoplaylist-live.hls.adaptive.level3.net/vevo/ch2/06/prog_index.m3u8</location>
+      <title>Vevo Ch2</title>
+      <annotation>Vevo Music Channel 2</annotation>
+      <image>http://i.imgur.com/wRYkR3q.png</image>
+      <meta rel="category">Music</meta>
+    </track>
+    <track>
+      <location>http://vevoplaylist-live.hls.adaptive.level3.net/vevo/ch3/06/prog_index.m3u8</location>
+      <title>Vevo Ch3</title>
+      <annotation>Vevo Music Channel 3</annotation>
+      <image>http://i.imgur.com/wRYkR3q.png</image>
+      <meta rel="category">Music</meta>
+    </track>
+    <track>
+      <location>http://brodilo.tv/channel.php</location>
+      <title>Brodilo TV</title>
+      <annotation>Brodilo TV Broadcast</annotation>
+      <image>http://cs9748.vk.me/g22263923/a_5a6dcab0.jpg</image>
+    </track>
+    <track>
+      <location>http://odna.octoshape.net/f3f5m2v4/cds/ch5_720p/playlist.m3u8</location>
+      <title>RT Documentary</title>
+      <annotation>Russian Today Documentary Channel</annotation>
+      <image>http://rt.com/static/img/static/logo.png</image>
+      <meta rel="category">Documentary</meta>
+    </track>
+    <track>
+      <location>http://www.oncetvmexicolive.tv:1935/livepkgr2/smil:int.smil/playlist.m3u8</location>
+      <title>Canal Once</title>
+      <annotation>Canal Once - Mexico City, Mexico</annotation>
+      <image>http://i.imgur.com/2EXKvWB.png</image>
+      <meta rel="category">Education</meta>
+    </track>
+    <track>
+      <location>http://flash.asaweb.com.br:1935/8306/8306/playlist.m3u8</location>
+      <title>TV Mundo Maior</title>
+      <annotation>TV Mundo Maior - São Paulo, Brazil</annotation>
+      <image>http://i.imgur.com/tlhCwDQ.jpg</image>
+      <meta rel="category">Education</meta>
+      <meta rel="category">Religious</meta>
+    </track>
+  </trackList>
+</playlist>

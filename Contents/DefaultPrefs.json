@@ -1,0 +1,25 @@
+[
+    {
+        "id": "language",
+        "label": "Categories Language",
+        "type": "enum",
+        "values": [
+            "English/en",
+            "Español/es"
+        ],
+        "default": "English/en"
+    },
+    {
+        "id": "playlist",
+        "label": "Playlist",
+        "type": "text",
+        "default": "sample.xspf"
+    },
+    {
+        "id": "items_per_page",
+        "type": "enum",
+        "label": "Items per page",
+        "values": ["10", "20", "25", "50", "100"],
+        "default": "10",
+    }
+]
