@@ -11,6 +11,9 @@
 	<key>PlexFrameworkVersion</key>
 	<string>2</string>
 
+	<key>PlexPluginCodePolicy</key>
+	<string>Elevated</string>
+
 	<key>PlexMediaContainer</key>
 	<array>
 		<string>MP4</string>

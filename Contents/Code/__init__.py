@@ -2,6 +2,7 @@
 from lxml import etree
 from StringIO import StringIO
 from random import randint
+from m3u2xspf import M3U2XSPF
 
 TITLE  = u'AIPTV'
 PREFIX = '/video/aiptv'
@@ -150,7 +151,7 @@ def aiptv_channels_list(order, page = 1):
       no_cache = True
     )
 
-  datastring = Resource.Load(Prefs["playlist"], binary = True)
+  datastring = aiptv_get_XSPF_string(Prefs["playlist"])
   data = etree.parse(StringIO(datastring))
 
   if order == '+title':
@@ -173,7 +174,6 @@ def aiptv_channels_list(order, page = 1):
       'p': 'http://xspf.org/ns/0/'
     }
   )
-  #TODO sort channels
 
   if len(channels) > 0:
     items_per_page = int( Prefs['items_per_page'] )
@@ -208,7 +208,7 @@ def aiptv_categories():
     title2 = L('Categories')
   )
 
-  datastring = Resource.Load(Prefs["playlist"], binary = True)
+  datastring = aiptv_get_XSPF_string(Prefs["playlist"])
   data = XML.ElementFromString(datastring)
   if AIPTV_DEBUG: Log.Debug(data)
   categories = data.xpath(
@@ -306,7 +306,7 @@ def aiptv_category_list(category, order, page = 1):
     no_cache = True
   )
 
-  datastring = Resource.Load(Prefs["playlist"], binary = True)
+  datastring = aiptv_get_XSPF_string(Prefs["playlist"])
   data = etree.parse(StringIO(datastring))
 
   if order == '+title':
@@ -337,7 +337,6 @@ def aiptv_category_list(category, order, page = 1):
         'p': 'http://xspf.org/ns/0/'
       }
     )
-  #TODO sort channels
 
   if len(channels) > 0:
     items_per_page = int( Prefs['items_per_page'] )
@@ -395,7 +394,7 @@ def aiptv_alpha_list(char, page = 1):
     title2 = unicode(char).upper() + ' | ' + L('Page') + ' ' + str(page)
   )
 
-  datastring = Resource.Load(Prefs["playlist"], binary = True)
+  datastring = aiptv_get_XSPF_string(Prefs["playlist"])
   data = etree.parse(StringIO(datastring))
 
   sortXSLT = Resource.Load("sort.xslt", binary = True)
@@ -409,7 +408,6 @@ def aiptv_alpha_list(char, page = 1):
       'p': 'http://xspf.org/ns/0/'
     }
   )
-  #TODO sort channels
 
   if len(channels) > 0:
     items_per_page = int( Prefs['items_per_page'] )
@@ -451,7 +449,7 @@ def aiptv_search(query, page = 1):
     no_cache = True
   )
 
-  datastring = Resource.Load(Prefs["playlist"], binary = True)
+  datastring = aiptv_get_XSPF_string(Prefs["playlist"])
   data = XML.ElementFromString(datastring)
   xpathstring = '//p:track[p:title[contains(translate(text(), "ABCDEFGHJIKLMNOPQRSTUVWXYZ", "abcdefghjiklmnopqrstuvwxyz"), "' + query.lower() + '")]]'
   channels = data.xpath(
@@ -460,7 +458,6 @@ def aiptv_search(query, page = 1):
       'p': 'http://xspf.org/ns/0/'
     }
   )
-  #TODO sort channels
 
   if len(channels) > 0:
     items_per_page = int( Prefs['items_per_page'] )
@@ -580,6 +577,15 @@ def aiptv_compute(channel):
     thumb,
     art
   )
+
+################################################################################
+def aiptv_get_XSPF_string(filename):
+  if filename.endswith('.xspf'):
+    return Resource.Load(filename, binary = True)
+  elif filename.endswith('.m3u') or filename.endswith('.m3u8'):
+    return M3U2XSPF().parse(Resource.Load(filename, binary = True)).read()
+  else:
+    return ""
 
 ################################################################################
 def L(string):
