@@ -18,7 +18,7 @@
   <xsl:copy>
     <xsl:apply-templates select="@*" />
     <xsl:apply-templates select="p:track">
-      <xsl:sort select="p:title" data-type="text" order='{$dir}' />
+      <xsl:sort select="translate(p:title, 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')" data-type="text" order='{$dir}' />
     </xsl:apply-templates>
   </xsl:copy>
 </xsl:template>
