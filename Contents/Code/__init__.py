@@ -185,7 +185,8 @@ def aiptv_channels_list(order, page = 1):
         url = url,
         title = title,
         summary = summary,
-        thumb = thumb
+        thumb = thumb,
+        art = art
       ))
 
     if len(channels) > last:
@@ -348,7 +349,8 @@ def aiptv_category_list(category, order, page = 1):
         url = url,
         title = title,
         summary = summary,
-        thumb = thumb
+        thumb = thumb,
+        art = art
       ))
 
     if len(channels) > last:
@@ -419,7 +421,8 @@ def aiptv_alpha_list(char, page = 1):
         url = url,
         title = title,
         summary = summary,
-        thumb = thumb
+        thumb = thumb,
+        art = art
       ))
 
     if len(channels) > last:
@@ -469,7 +472,8 @@ def aiptv_search(query, page = 1):
         url = url,
         title = title,
         summary = summary,
-        thumb = thumb
+        thumb = thumb,
+        art = art
       ))
 
     if len(channels) > last:
@@ -488,7 +492,7 @@ def aiptv_search(query, page = 1):
 
 ################################################################################
 @route(PREFIX + '/createvideoclipobject')
-def CreateVideoClipObject(url, title, summary, thumb, container = False):
+def CreateVideoClipObject(url, title, summary, thumb, art, container = False):
   video = VideoClipObject(
     key = Callback(
       CreateVideoClipObject,
@@ -496,11 +500,13 @@ def CreateVideoClipObject(url, title, summary, thumb, container = False):
       title = title,
       summary = summary,
       thumb = thumb,
+      art = art,
       container = True
     ),
     rating_key = url,
     title = title,
-    thumb = Resource.ContentsOfURLWithFallback(url = thumb),
+    thumb = Resource.ContentsOfURLWithFallback(url = thumb, fallback = AIPTV_DEFAULT),
+    art = Resource.ContentsOfURLWithFallback(url = art, fallback = AIPTV_ART),
     summary = summary,
     items = [
       MediaObject(
@@ -568,7 +574,7 @@ def aiptv_compute(channel):
       }
     )[0]
   except:
-    art = thumb
+    art = ""
 
   return (
     url,

@@ -4,7 +4,7 @@
   <creator>Fernando San Julián</creator>
   <annotation>Sample List for Alternative IPTV Plex Plugin</annotation>
   <date>2015-06-09T08:47:17</date>
-  <image>default.png</image>
+  <image>aiptv.png</image>
   <trackList>
     <track>
       <location>http://rt.com/s/rtplayer/playlists/rt_global.m3u8</location>
@@ -88,6 +88,7 @@
       <title>Brodilo TV</title>
       <annotation>Brodilo TV Broadcast</annotation>
       <image>http://cs9748.vk.me/g22263923/a_5a6dcab0.jpg</image>
+      <meta rel="art">http://brodilo.tv/screenshots/PriElbrus_out_81.jpg</meta>
     </track>
     <track>
       <location>http://odna.octoshape.net/f3f5m2v4/cds/ch5_720p/playlist.m3u8</location>
