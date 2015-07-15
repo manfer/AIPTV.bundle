@@ -13,16 +13,20 @@ __author__ = "Fernando San Julián"
 __copyright__ = "Copyright 2015"
 
 __license__ = "GPLv3"
-__version__ = "0.1"
+__version__ = "0.2"
 
 class M3U2XSPF:
   '''M3U to XSPF Parser'''
 
+  # (?!\s?\[COLOR).+?) ignore lines if the title contains bbcode
+  # (:?#(?!EXTINF).+?\n+?)? ignore comments - lines that start with #
   RE_TRACK = re.compile(
-    r'#EXTINF:-?\d+\s*?(?P<metadata>.+?)?,(?P<title>(?!\s?\[COLOR).+?)\n+?(?P<uri>.+?:\/\/.+)\n*'
+    r'#EXTINF:-?\d+\s*?(?P<metadata>.+?)?,(?P<title>(?!\s?\[COLOR).+?)\n+?(:?#(?!EXTINF).+?\n+?)?(?P<uri>.+?:\/\/.+)\n*'
   )
+  # I set optional on the = sign to parse malformed m3u files
+  # If we find any problem we should change =? to =
   RE_METADATA = re.compile(
-    r'(.+?)="(.+?)"'
+    r'(.+?)=?"(.+?)"'
   )
 
   def __init__(self, input = '', output = ''):
@@ -55,17 +59,17 @@ class M3U2XSPF:
     self.tmpfile.write('<playlist version="1" xmlns="http://xspf.org/ns/0/">\n')
     self.tmpfile.write('  <trackList>\n')
 
-    for (metadataString, title, uri) in re.findall(self.RE_TRACK, icontent):
+    for track in [match.groupdict() for match in self.RE_TRACK.finditer(icontent)]:
       metadata = {}
-      for (key, value) in re.findall(self.RE_METADATA, metadataString):
+      for (key, value) in re.findall(self.RE_METADATA, "" if track['metadata'] is None else track['metadata']):
         metadata[key.strip()] = value.strip()
 
       self.tmpfile.write('    <track>\n')
-      self.tmpfile.write('      <location><![CDATA[' + uri.strip() + ']]></location>\n')
-      self.tmpfile.write('      <title><![CDATA[' + title.strip() + ']]></title>\n')
-      
-      if metadata.has_key('group-title'):
-        self.tmpfile.write('      <meta rel="category"><![CDATA[' + metadata['group-title'].strip() + ']]></meta>\n')
+      self.tmpfile.write('      <location><![CDATA[' + track['uri'].strip() + ']]></location>\n')
+      self.tmpfile.write('      <title><![CDATA[' + track['title'].strip() + ']]></title>\n')
+
+      for key, value in metadata.iteritems():
+        self.tmpfile.write('      <meta rel="' + key.strip() + '"><![CDATA[' + value.strip() + ']]></meta>\n')
 
       self.tmpfile.write('    </track>\n')
 
