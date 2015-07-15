@@ -13,7 +13,7 @@ __author__ = "Fernando San Julián"
 __copyright__ = "Copyright 2015"
 
 __license__ = "GPLv3"
-__version__ = "0.2"
+__version__ = "0.2.1"
 
 class M3U2XSPF:
   '''M3U to XSPF Parser'''
@@ -108,6 +108,7 @@ class M3U2XSPF:
     try:
       with open(output, 'w') as fdest:
         shutil.copyfileobj(self.tmpfile, fdest)
+        print 'The file "' + output + '" has been created'
     except shutil.Error as e:
       print('Error: {0}'.format(e))
     except IOError as e:
@@ -117,6 +118,13 @@ class M3U2XSPF:
     if self.tmpfile: self.tmpfile.close()
 
 
+def printcopyright():
+  print 'AIPTV Copyright (C) 2015 Fernando San Julián'
+  print 'This program comes with ABSOLUTELY NO WARRANTY;'
+  print 'This is free software, and you are welcome to redistribute it'
+  print 'under certain conditions;'
+  print ''
+
 def printhelp():
   print 'Usage: m3u2xspf.py [-f] -i <inputfile> -o <outputfile>'
   print 'Parses m3u inputfile into a xspf outputfile.'
@@ -125,8 +133,11 @@ def printhelp():
   print '  -h prints this help and exits.'
   print '  -i, --inputfile select m3u inputfile.'
   print '  -o, --outputfile select xsfp outputfile.'
+  print ''
 
 def main(argv):
+
+  printcopyright() 
   inputfile = ''
   outputfile = ''
   force = False
