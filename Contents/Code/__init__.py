@@ -212,7 +212,7 @@ def aiptv_categories():
   data = XML.ElementFromString(datastring)
   if AIPTV_DEBUG: Log.Debug(data)
   categories = data.xpath(
-    '//p:meta[@rel="category"]/text()',
+    '//p:meta[@rel="group-title"]/text()',
     namespaces = {
       'p': 'http://xspf.org/ns/0/'
     }
@@ -325,14 +325,14 @@ def aiptv_category_list(category, order, page = 1):
 
   if category == AIPTV_NO_CATEGORY:
     channels = data.xpath(
-      '//p:track[not(p:meta[@rel="category"])]',
+      '//p:track[not(p:meta[@rel="group-title"])]',
       namespaces = {
         'p': 'http://xspf.org/ns/0/'
       }
     )
   else:
     channels = data.xpath(
-      '//p:track[p:meta[@rel="category"]/text() = "' + category + '"]',
+      '//p:track[p:meta[@rel="group-title"]/text() = "' + category + '"]',
       namespaces = {
         'p': 'http://xspf.org/ns/0/'
       }
