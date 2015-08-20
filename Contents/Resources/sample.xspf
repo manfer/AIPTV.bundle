@@ -7,7 +7,7 @@
   <image>aiptv.png</image>
   <trackList>
     <track>
-      <location>http://rt.com/s/rtplayer/playlists/rt_global.m3u8</location>
+      <location>http://rt-a.akamaihd.net/ch_04@325608/720p.m3u8</location>
       <title>RT HD</title>
       <annotation>Russia Today News Channel</annotation>
       <image>http://rt.com/static/img/static/logo.png</image>
@@ -91,7 +91,7 @@
       <meta rel="art">http://brodilo.tv/screenshots/PriElbrus_out_81.jpg</meta>
     </track>
     <track>
-      <location>http://odna.octoshape.net/f3f5m2v4/cds/ch5_720p/playlist.m3u8</location>
+      <location>http://rt-a.akamaihd.net/ch_05@325609/720p.m3u8</location>
       <title>RT Documentary</title>
       <annotation>Russian Today Documentary Channel</annotation>
       <image>http://rt.com/static/img/static/logo.png</image>
