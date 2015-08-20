@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="content">
+
+  <div class="container">
+
+    <div class="row specs">
+
+      {% for spec in site.data.projects.[site.project].specs %}
+      <div class="col-lg-4 text-center">
+        <i class="glyphicon glyphicon-{{ spec.icon }}"></i>
+        <h3>{{ spec.header }}</h3>
+        <p class="text-muted">{{ spec.text }}</p>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</div>
+
+{% include carousel.html %}
