@@ -1,3 +1,4 @@
 [submodule "_data"]
 	path = _data
 	url = https://github.com/manfer/PlexChannels.git
+	branch = master
