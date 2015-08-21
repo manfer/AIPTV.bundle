@@ -1,6 +1,6 @@
 <div class="github-fork-ribbon-wrapper right">
   <div class="github-fork-ribbon">
-    <a href="{{ site.data.projects.[site.project].github }}">View me on GitHub</a>
+    <a href="{{ site.github.repository_url }}">View me on GitHub</a>
   </div>
 </div>
 
@@ -10,7 +10,7 @@
       <h1>{{ site.data.projects.[site.project].name }}</h1>
       <p>{{ site.data.projects.[site.project].description }}</p>
       <p>
-        <a class="btn btn-default" href="{{ site.data.projects.[site.project].github }}{{ site.data.projects.[site.project].download }}" role="button">
+        <a class="btn btn-default" href="{{ site.github.repository_url }}/archive/{{ site.github.releases[0].tag_name }}.zip" role="button">
           <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download
         </a>
       </p>
