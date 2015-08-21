@@ -112,5 +112,11 @@
       <meta rel="group-title">Education</meta>
       <meta rel="group-title">Religious</meta>
     </track>
+    <track>
+      <location>rtmp://live.lachainenormande.fr:80/live/lcn/livestream</location>
+      <title>La Chaîne Normande</title>
+      <annotation>généraliste locale privée</annotation>
+      <image>http://i.imgur.com/W6UWj2F.png</image>
+    </track>
   </trackList>
 </playlist>
