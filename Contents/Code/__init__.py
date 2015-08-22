@@ -525,7 +525,11 @@ def CreateVideoClipObject(url, title, summary, thumb, art, container = False):
   )
 
   if container:
-    return ObjectContainer(objects = [video])
+    oc = ObjectContainer(
+      title2 = title
+    )
+    oc.add(video)
+    return oc
   else:
     return video
 
