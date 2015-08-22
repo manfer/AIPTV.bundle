@@ -1,3 +1,9 @@
+Version 0.4 (2015-08-22):
+* Fixed for Plex Home Theater
+
+Version 0.2 (2015-08-20):
+* Updated Sample Playlist
+
 Version 0.2 (2015-07-16):
 * Added Extended M3U support
 
