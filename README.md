@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
 
 ## AIPTV - Alternative IPTV Plex Media Server plugin ##
-by [manfer], version [0.4][Changelog]
+by [manfer], version [0.5][Changelog]
 
 1. [Why AIPTV][1]
 2. [Requirements][2]
@@ -58,12 +58,12 @@ So, why we don't just use the rich [XSPF] format and deprecate [M3U]?
 [Plex Media Server][GetPlex] installed
 
 ### Installation ###
-1. Download the last version [zip archive](https://github.com/manfer/AIPTV.bundle/archive/v0.4.zip) and extract it to Plex plugin folder. For more details read the [official channel installation guide](https://support.plex.tv/hc/en-us/articles/201187656-How-do-I-manually-install-a-channel-):
+1. Download the last version [zip archive](https://github.com/manfer/AIPTV.bundle/archive/v0.5.zip) and extract it to Plex plugin folder. For more details read the [official channel installation guide](https://support.plex.tv/hc/en-us/articles/201187656-How-do-I-manually-install-a-channel-):
   * on Windows: *C:\Users\USERNAME\AppData\Local\Plex Media Server\Plug-ins*
   * on Mac: *~Library/Application Support/Plex Media Server/Plug-ins*
   * on Linux: */usr/lib/plexmediaserver/Resources/Plug-ins* or */var/lib/plex/Plex Media Server/Plug-ins*
   * on FreeBSD *usr/pbi/plexmediaserver-amd64/plexdata/Plex\ Media\ Server/Plug-ins/*
-2. Rename folder from *AIPTV.bundle-0.4* to *AIPTV.bundle*;
+2. Rename folder from *AIPTV.bundle-0.5* to *AIPTV.bundle*;
 3. The Channel comes with a sample [XSPF] playlist so you can start using AIPTV Channel just after install. Add your [XSPF] or [Extended M3U] playlist in AIPTV Resources folder and configure AIPTV to use that playlist if you prefer to use your own.
 
 ### XSPF Playlist Structure ###

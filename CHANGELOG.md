@@ -1,3 +1,7 @@
+Version 0.5 (2015-08-23):
+* Momentanously disable art feature
+* Let PMS decide about Media Object details
+
 Version 0.4 (2015-08-22):
 * Fixed for Plex Home Theater
 
