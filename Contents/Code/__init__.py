@@ -506,14 +506,14 @@ def CreateVideoClipObject(url, title, summary, thumb, art, container = False):
     rating_key = url,
     title = title,
     thumb = Resource.ContentsOfURLWithFallback(url = thumb, fallback = AIPTV_DEFAULT),
-    #art = Resource.ContentsOfURLWithFallback(url = art, fallback = AIPTV_ART),
+    # art = Resource.ContentsOfURLWithFallback(url = art, fallback = AIPTV_ART),
     summary = summary,
     items = [
       MediaObject(
-        #container = Container.MP4,
-        #video_codec = VideoCodec.H264,
-        #audio_codec = AudioCodec.AAC,
-        #audio_channels = 2,
+        # container = Container.MP4,
+        # video_codec = VideoCodec.H264,
+        # audio_codec = AudioCodec.AAC,
+        # audio_channels = 2,
         parts = [
           PartObject(
             key = Callback(
@@ -522,7 +522,7 @@ def CreateVideoClipObject(url, title, summary, thumb, art, container = False):
             )
           )
         ],
-        #optimized_for_streaming = True
+        optimized_for_streaming = True if Client.Product != 'Plex Web' else False
       )
     ]
   )
