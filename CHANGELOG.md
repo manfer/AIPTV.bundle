@@ -1,3 +1,7 @@
+Version 0.6 (2015-08-23):
+* Enabled optimize for streaming
+* Added audio codec in info.plist
+
 Version 0.5 (2015-08-23):
 * Momentanously disable art feature
 * Let PMS decide about Media Object details
