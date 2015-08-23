@@ -510,16 +510,19 @@ def CreateVideoClipObject(url, title, summary, thumb, art, container = False):
     summary = summary,
     items = [
       MediaObject(
-        container = Container.MP4,
-        video_codec = VideoCodec.H264,
-        audio_codec = AudioCodec.AAC,
-        audio_channels = 2,
+        #container = Container.MP4,
+        #video_codec = VideoCodec.H264,
+        #audio_codec = AudioCodec.AAC,
+        #audio_channels = 2,
         parts = [
           PartObject(
-            key = url
+            key = Callback(
+              PlayVideo,
+              url = url
+            )
           )
         ],
-        optimized_for_streaming = True
+        #optimized_for_streaming = True
       )
     ]
   )
@@ -532,6 +535,14 @@ def CreateVideoClipObject(url, title, summary, thumb, art, container = False):
     return oc
   else:
     return video
+
+################################################################################
+@indirect
+def PlayVideo(url):
+  return IndirectResponse(
+    VideoClipObject,
+    key = url
+  )
 
 ################################################################################
 def aiptv_compute(channel):
