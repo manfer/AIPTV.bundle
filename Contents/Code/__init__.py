@@ -498,15 +498,15 @@ def CreateVideoClipObject(url, title, summary, thumb, art, container = False):
       CreateVideoClipObject,
       url = url,
       title = title,
-      summary = summary,
-      thumb = thumb,
-      art = art,
+      summary = summary if summary else "''",
+      thumb = thumb if thumb else "''",
+      art = art if art else "''",
       container = True
     ),
     rating_key = url,
     title = title,
     thumb = Resource.ContentsOfURLWithFallback(url = thumb, fallback = AIPTV_DEFAULT),
-    # art = Resource.ContentsOfURLWithFallback(url = art, fallback = AIPTV_ART),
+    art = Resource.ContentsOfURLWithFallback(url = art, fallback = AIPTV_ART),
     summary = summary,
     items = [
       MediaObject(
