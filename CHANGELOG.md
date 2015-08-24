@@ -1,3 +1,6 @@
+Version 0.6 (2015-08-24):
+* Reenable art feature
+
 Version 0.6 (2015-08-23):
 * Enabled optimize for streaming
 * Added audio codec in info.plist
