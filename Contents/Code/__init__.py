@@ -492,7 +492,7 @@ def aiptv_search(query, page = 1):
 
 ################################################################################
 @route(PREFIX + '/createvideoclipobject')
-def CreateVideoClipObject(url, title, summary, thumb, art, container = False):
+def CreateVideoClipObject(url, title, summary = "", thumb = "", art = "", container = False):
   video = VideoClipObject(
     key = Callback(
       CreateVideoClipObject,
@@ -539,10 +539,23 @@ def CreateVideoClipObject(url, title, summary, thumb, art, container = False):
 ################################################################################
 @indirect
 def PlayVideo(url):
-  return IndirectResponse(
-    VideoClipObject,
-    key = url
-  )
+  if url.startswith("http") or url.startswith("https"):
+    video = IndirectResponse(
+      VideoClipObject,
+      key = HTTPLiveStreamURL(url = url)
+    )
+  elif url.startswith("rtmp"):
+    video = IndirectResponse(
+      VideoClipObject,
+      key = RTMPVideoURL(url = url, live = True)
+    )
+  else:
+    video = IndirectResponse(
+      VideoClipObject,
+      key = url
+    )
+
+  return video
 
 ################################################################################
 def aiptv_compute(channel):
