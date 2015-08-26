@@ -1,4 +1,7 @@
-Version 0.6 (2015-08-24):
+Version 0.8 (2015-08-26):
+* Enhanced Play Video
+
+Version 0.7 (2015-08-24):
 * Reenable art feature
 
 Version 0.6 (2015-08-23):
